@@ -2,38 +2,6 @@
     {
         "projectUrl": "https://discord.gg/storm",
         "provider": "Zirnek",
-        "name": "Example Looped Plugin",
-        "description": "A type of plugin of which the plugin logic is contained within a single 'loop' function",
-        "id": "exampleloopedplugin-plugin",
-        "releases": [
-            {
-                "date": "2025-06-13",
-                "sha512sum": "F976EC564A714173333124D3A13E016EFE3910ACB7AD0E50223368C305AB951FDA808DF5FB500E578656B041178CB036F77D7962629CA6EC436D2F5CB8C7C8D2",
-                "version": "0.0.1",
-                "url": "https://raw.githubusercontent.com/Zirnek/storm/main/example-looped-plugin-0.0.1.jar",
-                "requires": "^1.0.0"
-            }
-        ]
-    },
-    {
-        "projectUrl": "https://discord.gg/storm",
-        "provider": "Zirnek",
-        "name": "Example Task Plugin",
-        "description": "A type of plugin of which the plugin logic is split into tasks",
-        "id": "exampletaskplugin-plugin",
-        "releases": [
-            {
-                "date": "2025-06-13",
-                "sha512sum": "D192D5D1EE3AB832485571CD5157B7F591D46B6A2F79117443CF8B00776FF0691B9F2F2C033680A85782FD1772AADD8581EF87940FDFC9ACE2E658928A8E9281",
-                "version": "0.0.1",
-                "url": "https://raw.githubusercontent.com/Zirnek/storm/main/example-task-plugin-0.0.1.jar",
-                "requires": "^1.0.0"
-            }
-        ]
-    },
-    {
-        "projectUrl": "https://discord.gg/storm",
-        "provider": "Zirnek",
         "name": "Loot Handler",
         "description": "Handles selling NPCs loot to the Grand Exchange",
         "id": "loothandler-plugin",
