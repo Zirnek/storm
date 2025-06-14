@@ -8,7 +8,7 @@
         "releases": [
             {
                 "date": "2025-06-14",
-                "sha512sum": "4B67E9E3292B1E4BA6F31DEC69CDE8BCEB92C061865A5733330A1460A4077B3B5779FF1597FD5402966926DDC4A53E6E6DF9CAEC3AD60FF35F8DF832B58D2CFF",
+                "sha512sum": "D81233E52405FC0373DD04849C83467F64B22F488063CEF203B6257479519432FFAB109E9869D4F66AF9BB7AEBF6B3879A3B346DCB887AA8875F520CBD0B1D03",
                 "version": "0.0.1",
                 "url": "https://raw.githubusercontent.com/Zirnek/storm/main/loot-handler-plugin-0.0.1.jar",
                 "requires": "^1.0.0"
