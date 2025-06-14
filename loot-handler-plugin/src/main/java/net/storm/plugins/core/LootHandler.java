@@ -169,8 +169,7 @@ public final class LootHandler extends XPlugin {
 		final String[] rawItemsArray = config.itemNames().split(",");
 
 		final Map<String, Integer> rawItemsMap = Arrays.stream(rawItemsArray)
-				.map(s -> s.replaceAll("(?<=\\S)\\s*=\\s*(?=\\S)", "=")) // remove leading and trailing white space for:
-																			// '=' splitter.
+				.map(s -> s.replaceAll("(?<=\\S)\\s*=\\s*(?=\\S)", "=")) // remove leading and trailing white space for: '=' splitter.
 				.map(String::toLowerCase).map(String::strip)
 				.collect(Collectors.toMap(s -> s.contains("=") ? s.substring(0, s.indexOf('=')) : s,
 						s -> s.contains("=")
@@ -192,9 +191,9 @@ public final class LootHandler extends XPlugin {
 
 			notify("Waiting for bank PIN to be entered.", true);
 
-			/*
-			 * If the bank is open, withdraw the items to sell.
-			 */
+		/*
+		 * If the bank is open, withdraw the items to sell.
+		 */
 		} else if (atStage(1, Bank.isOpen() && bankContainsItems(itemsMap) && Inventory.getFreeSlots() > 0)) {
 
 			// If there's an item present that isn't on the to sell list -> deposit
@@ -223,9 +222,9 @@ public final class LootHandler extends XPlugin {
 
 			} else Bank.setWithdrawMode(true);
 
-			/*
-			 * User doesn't own any items that are on the to sell list. Stop the script.
-			 */
+		/*
+		 * User doesn't own any items that are on the to sell list. Stop the script.
+		*/
 		} else if (atStage(2, Bank.isOpen() && !bankContainsItems(itemsMap) && !inventoryContainsItems(itemsMap))) {
 
 			// Terminate the script.
@@ -240,19 +239,19 @@ public final class LootHandler extends XPlugin {
 					e.printStackTrace();
 				}
 
-				// Deposit Inventory.
+			// Deposit Inventory.
 			} else Bank.depositInventory();
 
-			/*
-			 * If user has items to sell in the inventory, open the Grand Exchange.
-			 */
+		/*
+		* If user has items to sell in the inventory, open the Grand Exchange.
+		*/
 		} else if (atStage(3, inventoryContainsItems(itemsMap) && !GrandExchange.isOpen())) {
 
 			GrandExchange.open();
 
-			/*
-			 * Handle the Grand Exchange trading.
-			 */
+		/*
+		* Handle the Grand Exchange trading.
+		*/
 		} else if (atStage(4, GrandExchange.isOpen() && (inventoryContainsItems(itemsMap) || !GrandExchange.isEmpty()))) {
 
 			/*
@@ -274,19 +273,17 @@ public final class LootHandler extends XPlugin {
 
 				GrandExchange.collect();
 
-				/*
-				 * Set up offer.
-				 */
+			/*
+			* Set up offer.
+			*/
 			} else if (atStage(4.5, inventoryContainsItems(itemsMap))) {
 
-				// If "Sell offer" interface is open, but no item is selected, close GE
-				// interface.
+				// If "Sell offer" interface is open, but no item is selected, close GE interface.
 				if (atStage(4.6, GrandExchange.isSelling() && GrandExchange.getItemId() == -1)) {
 
 					Widgets.closeInterfaces();
 
-					// If Grand Exchange is open, and there are offer slots available: set up an
-					// offer.
+				// If Grand Exchange is open, and there are offer slots available: set up an offer.
 				} else if (atStage(4.7, !GrandExchange.isSelling() && !GrandExchange.isFull())) {
 
 					GrandExchange.sell(Inventory.getFirst(x -> itemsMap.keySet().contains(x.getName().toLowerCase())).getName());
@@ -309,10 +306,10 @@ public final class LootHandler extends XPlugin {
 
 			}
 
-			/*
-			 * If the bank is not open and there's no items to sell in the inventory. Travel
-			 * to the Grand Exchange bank, open it.
-			 */
+		/*
+		* If the bank is not open and there's no items to sell in the inventory. Travel
+		* to the Grand Exchange bank, open it.
+		*/
 		} else if (atStage(5, !inventoryContainsItems(itemsMap))) {
 			
 			// Travel to the Grand Exchange
@@ -346,9 +343,7 @@ public final class LootHandler extends XPlugin {
 
 	/**
 	 * Checks if the bank contains more items than should be retained.
-	 * 
-	 * @param itemsMap - key: <code>itemName</code>, value:
-	 *                 <code>retainQuantity</code>
+	 * @param itemsMap - key: <code>itemName</code>, value: <code>retainQuantity</code>
 	 * @return <b>true</b> - If the <b>Bank</b> contains any of the matching items.
 	 */
 	private final boolean bankContainsItems(Map<String, Integer> itemsMap) {
