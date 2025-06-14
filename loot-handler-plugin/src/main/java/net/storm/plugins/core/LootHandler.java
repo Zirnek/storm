@@ -1,5 +1,16 @@
 package net.storm.plugins.core;
 
+import java.awt.EventQueue;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
+
+import org.pf4j.Extension;
+
 import com.google.inject.Inject;
 import com.google.inject.Provides;
 
@@ -13,7 +24,7 @@ import net.storm.api.movement.pathfinder.model.BankLocation;
 import net.storm.api.plugins.Plugin;
 import net.storm.api.plugins.PluginDescriptor;
 import net.storm.api.plugins.PluginManager;
-import net.storm.api.plugins.config.*;
+import net.storm.api.plugins.config.ConfigManager;
 import net.storm.api.plugins.exception.PluginInstantiationException;
 import net.storm.plugins.components.PresetsDialog;
 import net.storm.plugins.utils.Scraper;
@@ -23,16 +34,6 @@ import net.storm.sdk.items.Bank;
 import net.storm.sdk.items.GrandExchange;
 import net.storm.sdk.items.Inventory;
 import net.storm.sdk.widgets.Widgets;
-
-import java.awt.EventQueue;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.stream.Collectors;
-import org.pf4j.Extension;
 
 /**
  * 
