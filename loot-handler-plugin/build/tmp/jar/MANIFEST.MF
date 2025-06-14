@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Plugin-Version: 0.0.1
+Plugin-Id: loothandler-plugin
+Plugin-Provider: Zirnek
+Plugin-Description: Handles selling NPCs loot to the Grand Exchange
+Plugin-License: 3-Clause BSD License
+
