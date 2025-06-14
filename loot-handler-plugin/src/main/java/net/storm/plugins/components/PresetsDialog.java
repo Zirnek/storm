@@ -25,21 +25,21 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 public class PresetsDialog extends JDialog {
 
-    private static final String BASE_DIR                                        = System.getProperty("user.home")
-                                                                                                            + File.separator + ".storm2" + File.separator + "data"
-                                                                                                            + File.separator + "oneirataxia" + File.separator + "loot_handler";
+    private static final String BASE_DIR = System.getProperty("user.home")
+            + File.separator + ".storm2" + File.separator + "data"
+            + File.separator + "oneirataxia" + File.separator + "loot_handler";
     
-    private static final URL ICON_URL                                           = PresetsDialog.class.getResource("/net/storm/plugins/resources/icon.png");
+    private static final URL ICON_URL = PresetsDialog.class.getResource("/net/storm/plugins/resources/icon.png");
     
-    private final Dimension windowSize                                      = new Dimension(600, 180);
+    private final Dimension windowSize = new Dimension(600, 180);
     
-    private final Properties props                                                  = new Properties();
+    private final Properties props = new Properties();
     
-    private final JTextField fileNameField                                  = new PromptTextField("Preset name...");
+    private final JTextField fileNameField = new PromptTextField("Preset name...");
     
-    private final DefaultListModel<String> fileListModel            = new DefaultListModel<>();
+    private final DefaultListModel<String> fileListModel = new DefaultListModel<>();
     
-    private final JList<String> fileList                                            = new JList<>(fileListModel);
+    private final JList<String> fileList = new JList<>(fileListModel);
 
     private String selectedFileName;
     private JTextArea textArea;
