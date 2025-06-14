@@ -53,7 +53,7 @@ public class Travel {
         /*
          * IS teleporting.
          */
-        } else if (Dialog.isOpen() && Dialog.hasOption("Grand Exchange") || Dialog.hasOption("Edgeville")) {
+        } else if (Dialog.isOpen() && (Dialog.hasOption("Grand Exchange") || Dialog.hasOption("Edgeville"))) {
             
             Dialog.chooseOption("Grand Exchange", "Edgeville");
             return false;
