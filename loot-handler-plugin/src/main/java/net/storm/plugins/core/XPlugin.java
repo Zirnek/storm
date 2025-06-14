@@ -59,11 +59,11 @@ public abstract class XPlugin extends net.storm.api.plugins.Plugin {
      * @param debug - Whether this should be displayed only if the debug mode is enabled.
      */
     protected void notify(String text, boolean debug) {
-        
+
         if (config.debugEnabled() && debug || !debug) {
-        
+
             clientThread.invoke(() -> {
-                rlClient.addChatMessage(ChatMessageType.GAMEMESSAGE, "", 
+                rlClient.addChatMessage(ChatMessageType.GAMEMESSAGE, "",
                         // [23:59:59] prefix
                         getFormattedTime() + "<col=ff0000>" + text + "</col>", null);
                 log(text);
