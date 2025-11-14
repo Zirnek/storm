@@ -1,0 +1,18 @@
+[
+    {
+        "projectUrl": "https://discord.gg/storm",
+        "provider": "Zirnek",
+        "name": "Dream Builder",
+        "description": "WIP",
+        "id": "dreambuilder-plugin",
+        "releases": [
+            {
+                "date": "2025-11-14",
+                "sha512sum": "E0190E61A91085A4CAA2D31A4954545218CF64F0B269C539AA264E598D48F44A1B2E9BADAE85C5F6FD03D2D2B9156A16BB902A9F8E96E7090D7A154503B4464E",
+                "version": "0.0.1",
+                "url": "https://raw.githubusercontent.com/Zirnek/storm/main/dreambuilder-plugin-0.0.1.jar",
+                "requires": "^1.0.0"
+            }
+        ]
+    }
+]
